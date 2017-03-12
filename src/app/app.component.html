@@ -1,4 +1,69 @@
+<ng2-slim-loading-bar [color]="'blue'" [height]="'4px'"></ng2-slim-loading-bar>
 <h1>
-  {{title}}
+  {{pagetitle}}   {{query}}
 </h1>
-<router-outlet></router-outlet>
+<div style="overflow:hidden">
+<!--search bar and filter-->
+
+<div class="col-sm-9">
+    <div class="input-group add-on">
+           <div class="input-group-btn">
+              <div class="btn-group" dropdown>
+                  <button id="single-button" type="button" class="btn btn-primary" dropdownToggle>
+                    {{searchBy}} <span class="caret"></span>
+                  </button>
+                  <ul dropdownMenu role="menu" aria-labelledby="single-button">
+                    <li role="menuitem" (click)="setSearchBY('title')">Title</li>
+                    <li role="menuitem" (click)="setSearchBY('author')">Author</li>
+                  </ul>
+                </div>
+          </div>
+      <input  ng2-auto-complete 
+      [source]="autoComplete" class="form-control" placeholder="Search" type="text" [(ngModel)]="query" (click)="search()" (change)="search()" (keyup)="search()">
+      <div class="input-group-btn">
+        <button class="btn btn-default" type="button" (click)="reset()"><i class="glyphicon glyphicon-remove"></i></button>
+        <button class="btn btn-default" type="button" (click)="search()"><i class="glyphicon glyphicon-search"></i></button>
+         <div class="btn-group" dropdown>
+                <button id="single-button" type="button" class="btn btn-primary" dropdownToggle>
+                  sort <span class="caret"></span>
+                </button>
+                <ul dropdownMenu role="menu" aria-labelledby="single-button">
+                  <li role="menuitem" (click)="sortAsc('title')">Title Asc</li>
+                  <li role="menuitem" (click)="sortDsc('title')">Title Dsc</li>
+                  <li role="menuitem" (click)="sortAsc('date')">Date Asc</li>
+                  <li role="menuitem" (click)="sortDsc('date')">Date Dsc</li>
+                </ul>
+              </div>
+      </div>
+    </div>
+</div>
+
+   <!--list items from db-->
+   <div style="padding-top: 40px !important;" *ngIf="articles.length>0">
+      <div class="col-sm-4 test" *ngFor="let article of articles | paginate: { itemsPerPage: 6, currentPage: p };let i = index">
+       <a target="_blank" href={{article.url}} >
+         <div style="padding:20px">
+           <div class="card">
+              <div class="row" style="height: 65px!important;">
+                <span class="icon-article icon"></span>{{article.title}}
+              </div>
+               <div class="row">
+                <div class="col-sm-6"> <span class="icon-heart icon"></span>{{article.num_points}}</div> <div class="col-sm-6"> <span class="icon-comments icon"></span>{{article.num_comments}}</div>
+              </div>
+               <div class="row">
+                <div class="col-sm-6"> <span class="icon-avatar icon"></span> {{article.author}}</div> <div class="col-sm-6"><span class="icon-time icon"></span> {{article.date|amTimeAgo}}</div>
+              </div>
+           </div>
+         </div>
+         </a>
+      </div>
+   </div>
+   <!--pagination-->
+   <div class="row">
+      <div class=" col-sm-4 col-sm-offset-4" style="padding: 0 !important;">
+         <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+   </div>
+</div>
+
+<!--{{articles|json}} {{data|json}}-->
