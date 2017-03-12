@@ -131,3 +131,9 @@ h4.title {
     height: 47px!important;
     margin-top: -1px;
 }
+.item{
+    padding-left: 10px;
+    border-bottom: solid;
+    border-width: 0.4px;
+    border-color: lightgrey;
+}

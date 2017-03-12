@@ -16,8 +16,8 @@
                     {{searchBy}} <span class="caret"></span>
                   </button>
                   <ul dropdownMenu role="menu" aria-labelledby="single-button">
-                    <li role="menuitem" (click)="setSearchBY('title')">Title</li>
-                    <li role="menuitem" (click)="setSearchBY('author')">Author</li>
+                    <li role="menuitem" class="item"  (click)="setSearchBY('title')">Title</li>
+                    <li role="menuitem"class="item" (click)="setSearchBY('author')">Author</li>
                   </ul>
                 </div>
         </li>
@@ -35,10 +35,11 @@
                  <span class="icon-filter icon-bar"></span>
                 </button>
                 <ul dropdownMenu role="menu" aria-labelledby="double-button">
-                  <li role="menuitem" (click)="sortAsc('title')">Title Asc</li>
-                  <li role="menuitem" (click)="sortDsc('title')">Title Dsc</li>
-                  <li role="menuitem" (click)="sortAsc('date')">Date Asc</li>
-                  <li role="menuitem" (click)="sortDsc('date')">Date Dsc</li>
+                  <li role="menuitem"> <div class="item" (click)="sortAsc('title')">Title Asc</div><div class="item"  (click)="sortDsc('title')">Title Dsc</div></li>
+                  <li role="menuitem"> <div class="item"  (click)="sortAsc('date')">Date Asc</div><div class="item"  (click)="sortDsc('date')">Date Dsc</div></li>
+                  <li role="menuitem"> <div class="item"  (click)="sortAsc('author')">Auhtor Asc</div><div class="item"  (click)="sortDsc('author')">Author Dsc</div></li>
+                  <li role="menuitem"> <div class="item"  (click)="sortAsc('points')">Points Asc</div><div class="item"  (click)="sortDsc('points')">Author Asc</div></li>
+                  <li role="menuitem"> <div class="item"  (click)="sortAsc('comments')">Comments Asc</div><div class="item"  (click)="sortDsc('comments')">Comments Asc</div></li>
                 </ul>
               </div>
     </div><!-- /.navbar-collapse -->
