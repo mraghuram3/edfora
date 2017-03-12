@@ -12,9 +12,9 @@ import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  pagetitle = 'Edfora';
+  pagetitle = 'Hacker News';
 
-  apiurl: string = '//starlord.hackerearth.com/edfora/hackernews';
+  apiurl: string = 'http://starlord.hackerearth.com/edfora/hackernews';
 
   data: Article[] = new Array<Article>();
   articles: Article[] = new Array<Article>();

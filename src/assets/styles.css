@@ -95,7 +95,7 @@
     font-size: 1em;
 }
 body {
-    background-image: url("/assets/escheresque_ste.png");
+    /*background-image: url("/assets/escheresque_ste.png");*/
     color:black !important;
     
 }
