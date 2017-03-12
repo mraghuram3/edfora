@@ -47,6 +47,15 @@ export class AppComponent {
     completeLoading() {
         this.slimLoadingBarService.complete();
     }
+    loadFRomLocal()
+    {
+      this.stopLoading();
+      this.startLoading();
+      this.http.get('assets/data.json')
+            .subscribe((res: Response) => {
+              this.data = res.json(),this.processData();
+            });
+    }
     processData() {
         for (let d of this.data)
         {
