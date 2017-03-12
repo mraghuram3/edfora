@@ -25,6 +25,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 .icon-filter:before {
   content: "\e900";
 }
@@ -55,6 +57,42 @@
     padding: 15px!important;
     font-size: 2em;
 
+}
+.icon-bar{
+        color: #546087!important;
+    font-weight: bolder !important;
+    /* padding: 15px!important; */
+    font-size: 2em;
+}
+.title{
+    color: rebeccapurple;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.time{
+    color: #000000!important;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+.author{
+    color: #000000!important;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+.comments{
+    color: #000000!important;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+.points{
+    color: #000000!important;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
 }
 body {
     background-image: url("/assets/escheresque_ste.png");
@@ -88,3 +126,8 @@ h4.title {
  .form-horizontal .ng2-auto-complete ul {
        height:300px !important;
       }
+.dropdown-btn{
+    background: white!important;
+    height: 47px!important;
+    margin-top: -1px;
+}
